@@ -1,0 +1,90 @@
+body {
+  margin: 0;
+  background-color: #282c34; /* Dark background for the entire page */
+  color: #ffffff; /* Light text for better readability on dark background */
+}
+
+.markdown-editor-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two columns of equal size */
+  grid-template-rows: auto 1fr min-content; /* Header, content, and minimum content for the button */
+  gap: 1rem;
+  height: 100vh; /* Full viewport height */
+  padding: 1rem 1rem 2rem; /* Increased padding at the bottom */
+  box-sizing: border-box; /* Include padding and border in the element's total width and height */
+  font-family: sans-serif;
+}
+
+.editor-title {
+  grid-column: 1 / -1; /* Span from the first to the last column */
+  grid-row: 1; /* Place in the first row */
+  color: #ffffff; /* Light color for the text */
+  text-align: center; /* Center the heading */
+  margin-bottom: 1rem; /* Add some space below the heading */
+  font-size: 2rem; /* Adjust the font size as needed */
+}
+
+.editor-input,
+.markdown-preview {
+  color: #dddddd; /* Light grey color for text */
+  background-color: #20232a; /* Slightly lighter dark shade for the input/preview background */
+  border: 1px solid #61dafb; /* React's brand color for borders */
+  padding: 1rem;
+  border-radius: 5px; /* Rounded corners for both input and preview */
+}
+
+.editor-input {
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  resize: none;
+  font-size: 1rem;
+}
+
+.markdown-preview {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  overflow: auto;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.markdown-preview > * {
+  margin-top: 0;
+  padding-top: 0;
+}
+
+.export-button {
+  grid-column: 1 / 3;
+  grid-row: 3 / 4;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  justify-self: center;
+  width: auto;
+  max-width: 200px;
+  background-color: #61dafb; /* React's brand color for the button background */
+  color: #20232a; /* Dark text color for contrast */
+  border: none; /* Remove border for the button */
+  border-radius: 4px; /* Rounded corners for the button */
+  font-size: 1rem;
+  font-family: sans-serif;
+  transition: background-color 0.2s ease; /* Smooth transition for hover effect */
+}
+
+.export-button:hover {
+  background-color: #4fa1db; /* Slightly darker shade for hover effect */
+}
+
+/* Styling for the scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 12px;
+}
+
+::-webkit-scrollbar-track {
+  background: #20232a;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #61dafb;    
+  border-radius: 10px;
+  border: 3px solid #20232a;
+}
